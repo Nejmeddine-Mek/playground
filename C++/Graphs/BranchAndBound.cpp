@@ -25,9 +25,9 @@ vector<int> BranchAndBound(int start, int end, vector<vector<int>> &adj_matrix, 
 
     vector<int> best_path;
 
-    bool found = false;
 
-    while(!pq.empty() && !found){
+
+    while(!pq.empty()){
         PathState current = pq.top();
         pq.pop();
         if(current.f >= best_cost) continue;
