@@ -7,8 +7,11 @@ using namespace std;
 
 queue<int> HillClimbing(int start, int end, vector<vector<int>> &adj_matrix, vector<bool> &visited, vector<int> &estimationFunction){
     queue<int> path;
-    if(start == end)
-    return path;
+    if(start == end){
+        path.push(start);
+        return path;
+    }
+
     stack<int> nextNeighbors;
     bool found = false;
     visited[start] = true;
