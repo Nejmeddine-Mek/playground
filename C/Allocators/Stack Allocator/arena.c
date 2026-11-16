@@ -14,13 +14,14 @@ int init(Arena *arena){
     return 0;
     
 }
-void *allocate(Arena *arena, size_t size){
+void *allocate(Arena *arena, size_t *size){
     if(arena == NULL)
         return NULL;
-    if(arena->size - arena->offset < size)
+    if(arena->size - arena->offset < *size)
         return NULL;
     void *result = arena->arena + arena->offset;
-    arena->offset += size;
+    *size = (*size + (ARENA_ALIGN - 1)) & ~(ARENA_ALIGN - 1);
+    arena->offset += *size;
     return result;
 
 }
