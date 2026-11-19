@@ -49,7 +49,7 @@ void MergeSort(int *data, size_t size){
 }
 
 int main(int argc,[[maybe_unused]] char **argv){
-
+    
     size_t size = 10;
     int *data = (int *)malloc(10* sizeof(int));
     int init[] = {42, -7, 19, 42, 0, 88, 3, -15, 27, 11};
